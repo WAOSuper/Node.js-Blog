@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+	form(method="post", action="/post/#{post._id}")
+		input(type="hidden", name="_method", value="PUT")
+		label(for="title") Title
+		input(type="text", name="title", id="title", value="#{post.title}")
+		br
+		label(for="body") Content
+		textarea(name="body", id="body")= post.body
+		br
+		input(type="submit", name="submit")

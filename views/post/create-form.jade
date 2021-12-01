@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+	form(method="post", action="/create/post")
+		label(for="title") Title
+		input(type="text", name="title", id="title")
+		br
+		label(for="author") Author
+		input(type="text", name="author", id="author")
+		br
+		label(for="body") Content
+		textarea(name="body", id="body")
+		br
+		input(type="submit", name="submit")

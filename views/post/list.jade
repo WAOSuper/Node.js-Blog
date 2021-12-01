@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+	div
+		a(href="/") All
+		br
+		a(href="/create/post") Post new blog
+	each post in posts
+		div(class="post")
+			h4(class="title")
+				a(href="/post/#{post._id}")= post.title
+			p(class="author") Author：#{post.title}
+			p(class="body")= post.body
+			a(href="/remove/post/#{post._id}") Delete
+			&nbsp;|&nbsp;
+			a(href="/update/post/#{post._id}") Update
